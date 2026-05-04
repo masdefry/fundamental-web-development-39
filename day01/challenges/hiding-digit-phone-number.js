@@ -10,4 +10,17 @@
         - Output yang dihasilkan harus bertipe data string 
         - Jumlah digit nomor hp di rentan 9-13 digit (termasuk 62)
 */
- var phoneNumber = 6281234567897
+let phoneNumber = 6281234567897;
+
+//  Step-01 : Konversi number menjadi string
+let phoneNumberStr = phoneNumber.toString();
+
+let unhidePhoneNumber = phoneNumberStr.slice(0, phoneNumberStr.length - 3);
+console.log(unhidePhoneNumber + '***');
+console.log(`${unhidePhoneNumber}***`);
+
+let name = 'Defryan';
+let hobby = 'Bola';
+
+console.log('Halo, nama saya: ' + name + '. Hobi saya adalah ' + hobby);
+console.log(`Halo, nama saya ${name}. Hobi saya adalah ${hobby}`);
