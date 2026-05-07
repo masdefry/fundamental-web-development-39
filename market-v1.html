@@ -1,0 +1,38 @@
+<script>
+  const products = [
+    ['Aple', 15000, 10], // index = 0; penomoran = 1
+    ['Mango', 20000, 20], // index = 1; penomoran = 2;
+    ['Pear', 25000, 25], // index = 2; penomoran = 3;
+  ];
+
+  let output = '';
+  // for (let [index, item] of products.entries()) {
+  //   output += `${index + 1}. ${item[0]}: Rp.${item[1].toLocaleString('id-ID')} (Available Stock ${item[2]}) \n`;
+  // }
+
+  products.forEach((item, index) => {
+    output += `${index + 1}. ${item[0]}: Rp.${item[1].toLocaleString('id-ID')} (Available Stock ${item[2]}) \n`;
+  });
+
+  do {
+    var selectedProduct = prompt(`${output} \n Select item to buy:`); // 1-1 = 0
+
+    if (selectedProduct < 1 || selectedProduct > products.length) {
+      alert(`Products not found`);
+    }
+  } while (selectedProduct < 1 || selectedProduct > products.length);
+
+  do {
+    var quantity = Number(prompt('Type quantity item:')); //11
+    var availableProductStock = products[selectedProduct - 1][2];
+
+    if (quantity > availableProductStock) {
+      alert('Insufficient product stock!');
+    }
+  } while (quantity > availableProductStock);
+
+  const printStruck = `
+  ${products[selectedProduct - 1][0]} x ${quantity} : Rp.${products[selectedProduct - 1][1] * quantity}
+  `;
+  alert(printStruck);
+</script>
