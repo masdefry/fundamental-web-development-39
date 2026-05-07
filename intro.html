@@ -1,0 +1,37 @@
+<!-- 
+<script>
+  const products = ['Apel', 'Mangga', 'Jeruk', 'Pisang', 'Kelengkeng'];
+  const prices = [15000, 20000, 25000, 10000, 45000];
+  const stocks = [10, 20, 25, 100, 50];
+
+    let output = '';
+    output += '===== MANAGEMENT PRODUCT ===== \n'
+
+  for (let i = 0; i < products.length; i++) {
+    output += `${products[i]}: ${prices[i]} (Available Stock ${stocks[i]}) \n`;
+  }
+
+  alert(output);
+</script> 
+-->
+
+<script>
+  const productName = prompt('Type product name');
+  const productPrice = Number(prompt('Type product price'));
+  const productStock = Number(prompt('Type product stock'));
+
+  const productList = [
+    ['Aple', 15000, 10],
+    ['Mango', 20000, 20],
+    ['Pear', 25000, 25],
+  ];
+
+  productList.push([productName, productPrice, productStock]);
+
+  let output = '';
+  for (let item of productList) {
+    output += `${item[0]}: Rp.${item[1].toLocaleString('id-ID')} (Available Stock ${item[2]}) \n`;
+  }
+
+  alert(output);
+</script>
