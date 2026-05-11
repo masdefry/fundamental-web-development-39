@@ -21,11 +21,3 @@ console.log(accountUser01);
 console.log(accountUser01.showBalance);
 accountUser01.updateBalance = 100000;
 console.log(accountUser01.showBalance);
-
-/*
-    Challenge. 
-
-    Disebuah supermarket terdapat banyak sekali product dengan berbagai category, seperti snack, fashion, dan electronic.
-    01 - Tentukan entitas/property apa saja yang terdapat di tiap-tiap category product 
-    02 - Buatkan class untuk tiap category product
-*/
