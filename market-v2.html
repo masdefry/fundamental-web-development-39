@@ -1,0 +1,64 @@
+<script>
+  class Products {
+    name = '';
+    price = 0;
+    stock = 0;
+
+    constructor(_name, _price, _stock) {
+      this.name = _name;
+      this.stock = _stock;
+      this.price = _price;
+    }
+  }
+
+  const products = [
+    new Products('Apel', 15000, 15),
+    new Products('Anggur', 55000, 10),
+    new Products('Jeruk', 25000, 25),
+  ];
+
+  function PrintProductList() {
+    let output = '';
+    products.forEach((item, index) => {
+      output += `${index + 1}. ${item?.name}: Rp.${item?.price?.toLocaleString('id-ID')} (Available Stock ${item?.stock}) \n`;
+    });
+
+    return output;
+  }
+
+  function Transaction(output) {
+    do {
+      var selectedProduct = prompt(`${output} \n Select item to buy:`);
+
+      if (selectedProduct < 1 || selectedProduct > products.length) {
+        alert(`Products not found`);
+      }
+    } while (selectedProduct < 1 || selectedProduct > products.length);
+
+    do {
+      var quantity = Number(prompt('Type quantity item:')); //11
+      var availableProductStock = products[selectedProduct - 1][2];
+
+      if (quantity > availableProductStock) {
+        alert('Insufficient product stock!');
+      }
+    } while (quantity > availableProductStock);
+
+    return {
+      selectedProduct,
+      quantity,
+    };
+  }
+
+  function PrintStruck(selectedProduct, quantity) {
+    const printStruck = `
+  ${products[selectedProduct - 1].name} x ${quantity} : Rp.${products[selectedProduct - 1].price * quantity}
+  `;
+    alert(printStruck);
+  }
+
+  const outputPrint = PrintProductList();
+  const outputTransaction = Transaction(outputPrint);
+
+  PrintStruck(outputTransaction.selectedProduct, outputTransaction.quantity);
+</script>

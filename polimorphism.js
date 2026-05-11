@@ -5,18 +5,12 @@ class PaymentMethod {
 }
 
 class PaymentDebit extends PaymentMethod {
-  constructor() {
-    super(amount);
-  }
   feeCharge(totalToPay) {
     this.amount = totalToPay + totalToPay * 0.01;
   }
 }
 
 class PaymentCreditCard extends PaymentMethod {
-  constructor() {
-    super(amount);
-  }
   feeCharge(totalToPay) {
     this.amount = totalToPay + totalToPay * 0.02;
   }
